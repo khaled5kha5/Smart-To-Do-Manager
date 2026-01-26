@@ -79,23 +79,29 @@ class _editTaskPage_work extends State<EditTaskPage>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Edit Task')
-      , backgroundColor: Colors.blue,),
+      ,),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: ListView(
           children: [
+
+            // Title TextField
             TextField(
               controller: titleController,
               decoration: const InputDecoration(labelText: 'Title'),
             ),
             const SizedBox(height: 10),
 
+
+            // Description TextField
             TextField(
               controller: descController,
               decoration: const InputDecoration(labelText: 'Description'),
             ),
             const SizedBox(height: 10),
 
+
+            // Priority Dropdown
             DropdownButtonFormField<String>(
               value: selectedPriority,
               decoration: const InputDecoration(labelText: 'Priority'),
@@ -113,6 +119,8 @@ class _editTaskPage_work extends State<EditTaskPage>{
             ),
             const SizedBox(height: 10),
 
+
+            // Due Date Picker
             ListTile(
               title: Text(
                 selectedDate == null
@@ -124,6 +132,8 @@ class _editTaskPage_work extends State<EditTaskPage>{
             ),
             const SizedBox(height: 20),
 
+
+            // Save Button
             ElevatedButton(
               onPressed: saveTask,
               child: const Text('Save Changes'),

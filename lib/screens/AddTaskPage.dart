@@ -24,21 +24,29 @@ class _addTaskPage_work extends State<AddTaskPage>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Add Task')
-      , backgroundColor: Colors.blue,),
+      ,),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
+
+
+            // Title TextField
             TextField(
               controller: titleController,
               decoration: const InputDecoration(labelText: 'Title'),
             ),
+
+
+            // Description TextField
             TextField(
               controller: descController,
               decoration: const InputDecoration(labelText: 'Description'),
             ),
             const SizedBox(height: 10),
 
+
+            // Priority Dropdown
             DropdownButtonFormField<String>(
               value: priority,
               decoration: const InputDecoration(labelText: 'Priority'),
@@ -57,6 +65,8 @@ class _addTaskPage_work extends State<AddTaskPage>{
 
             const SizedBox(height: 10),
 
+
+            // Due Date Picker
             ElevatedButton(
               child: Text(
                 selectedDate == null
@@ -80,9 +90,12 @@ class _addTaskPage_work extends State<AddTaskPage>{
 
             const SizedBox(height: 20),
 
+
+            // Save Button
             ElevatedButton(
               child: const Text('Save'),
               onPressed: () async {
+                // Validate title
                 if (titleController.text.trim().isEmpty) {
                 showDialog(
                   context: context, 
